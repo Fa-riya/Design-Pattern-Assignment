@@ -19,7 +19,6 @@ java -cp out com.fariya.order.app.Main
 For Windows PowerShell:
 
 ```powershell
-Get-ChildItem -Recurse src/main/java -Filter *.java | ForEach-Object { $_.FullName } > sources.txt
-javac -d out @sources.txt
+javac -d out (Get-ChildItem -Recurse src/main/java -Filter *.java | ForEach-Object { $_.FullName })
 java -cp out com.fariya.order.app.Main
 ```
